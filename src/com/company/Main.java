@@ -26,10 +26,8 @@ public class Main {
         }
 
         commands.put("ping", new PingCommand());
-        commands.put("bling", new BlingCommand());
         commands.put("hello", new HelloCommand());
         commands.put("rick", new RickCommand());
-        commands.put("fuck", new JoinChannelCommand());
         commands.put("leave", new LeaveCommand());
         commands.put("ready", new ReadyCommand());
         commands.put("bren", new BrenCommand());
