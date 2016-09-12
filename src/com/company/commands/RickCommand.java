@@ -1,6 +1,7 @@
 package com.company.commands;
 
 import com.company.Command;
+import com.company.Main;
 import net.dv8tion.jda.audio.player.FilePlayer;
 import net.dv8tion.jda.audio.player.Player;
 import net.dv8tion.jda.entities.Channel;
@@ -41,8 +42,11 @@ public class RickCommand implements Command {
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
 
+        // The guild of the player who sent the message
+        Guild guild = event.getGuild();
+
         // The voice channel of the person who called the command
-        VoiceChannel channel = Main.getVoiceChannel(event);
+        VoiceChannel channel = Main.getVoiceChannel(event, guild);
 
         AudioManager audioManager = jda.getAudioManager(guild);
         audioManager.openAudioConnection(channel);
@@ -51,7 +55,7 @@ public class RickCommand implements Command {
         URL audioUrl = null;
         try
         {
-            audioFile = new File("/Users/Zach/Documents/Discord Bot/test/src/com/company/I'm Rick Harrison, and this is my Pawn Shop..mp3");
+            audioFile = new File("/Users/Zach/Documents/discordSoundBot/src/com/company/Sounds/I'm Rick Harrison, and this is my Pawn Shop..mp3");
 //                    audioUrl = new URL("https://dl.dropboxusercontent.com/u/41124983/anime-48000.mp3?dl=1");
 
             Map<String,Player> players = new HashMap<>();

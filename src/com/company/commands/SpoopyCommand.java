@@ -1,6 +1,7 @@
 package com.company.commands;
 
 import com.company.Command;
+import com.company.Main;
 import net.dv8tion.jda.audio.player.FilePlayer;
 import net.dv8tion.jda.audio.player.Player;
 import net.dv8tion.jda.entities.Guild;
@@ -29,18 +30,11 @@ public class SpoopyCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
+        // The guild of the player who sent the message
         Guild guild = event.getGuild();
-        VoiceChannel channel = null;
 
-        outerloop:
-        for (VoiceChannel channel1 : guild.getVoiceChannels()) {
-            for (net.dv8tion.jda.entities.User user : channel1.getUsers()) {
-                if (user.getId().equals(event.getAuthor().getId())) {
-                    channel = channel1;
-                    break outerloop;
-                }
-            }
-        }
+        // The voice channel of the person who called the command
+        VoiceChannel channel = Main.getVoiceChannel(event, guild);
 
         AudioManager audioManager = jda.getAudioManager(guild);
         audioManager.openAudioConnection(channel);
@@ -49,7 +43,7 @@ public class SpoopyCommand implements Command {
         URL audioUrl = null;
         try
         {
-            audioFile = new File("/Users/Zach/Documents/Discord Bot/test/src/com/company/Spooky.mp3");
+            audioFile = new File("/Users/Zach/Documents/discordSoundBot/src/com/company/Sounds/Spooky.mp3");
 //                    audioUrl = new URL("https://dl.dropboxusercontent.com/u/41124983/anime-48000.mp3?dl=1");
 
             Map<String,Player> players = new HashMap<>();

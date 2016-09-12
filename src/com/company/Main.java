@@ -3,6 +3,8 @@ package com.company;
 import com.company.commands.*;
 import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
+import net.dv8tion.jda.entities.Guild;
+import net.dv8tion.jda.entities.VoiceChannel;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 import java.util.HashMap;
@@ -58,8 +60,8 @@ public class Main {
     }
 
 
-    public static VoiceChannel getVoiceChannel(MessageReceivedEvent event){
-        Guild guild = event.getGuild();
+    public static VoiceChannel getVoiceChannel(MessageReceivedEvent event, Guild guild){
+
         VoiceChannel channel = null;
 
         outerloop:
