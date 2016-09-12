@@ -40,18 +40,9 @@ public class RickCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
-        Guild guild = event.getGuild();
-        VoiceChannel channel = null;
 
-        outerloop:
-        for (VoiceChannel channel1 : guild.getVoiceChannels()) {
-            for (net.dv8tion.jda.entities.User user : channel1.getUsers()) {
-                if (user.getId().equals(event.getAuthor().getId())) {
-                    channel = channel1;
-                    break outerloop;
-                }
-            }
-        }
+        // The voice channel of the person who called the command
+        VoiceChannel channel = Main.getVoiceChannel(event);
 
         AudioManager audioManager = jda.getAudioManager(guild);
         audioManager.openAudioConnection(channel);

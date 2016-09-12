@@ -9,10 +9,15 @@ import java.util.HashMap;
 
 public class Main {
 
+    // Initializes the Java Discord Api (JDA) to be used for the program
     public static JDA jda;
+
+    // Initialize the command parser object
     public static final CommandParser PARSER = new CommandParser();
 
+    // Initialize the HashMap for the commands
     public static HashMap<String, Command> commands = new HashMap<String, Command>();
+
 
     // Main method
     public static void main(String[] args) {
@@ -34,6 +39,11 @@ public class Main {
         commands.put("spoopy", new SpoopyCommand());
     }
 
+
+    /**
+     * Executes commands if they contain a correct key
+     * @param cmd the command that will be executed
+     */
     public static void handleCommand(CommandParser.CommandContainer cmd) {
         if(commands.containsKey(cmd.invoke)) {
             boolean safe = commands.get(cmd.invoke).called(cmd.args, cmd.event);
@@ -46,4 +56,24 @@ public class Main {
             }
         }
     }
+
+
+    public static VoiceChannel getVoiceChannel(MessageReceivedEvent event){
+        Guild guild = event.getGuild();
+        VoiceChannel channel = null;
+
+        outerloop:
+        for (VoiceChannel channel1 : guild.getVoiceChannels()) {
+            for (net.dv8tion.jda.entities.User user : channel1.getUsers()) {
+                if (user.getId().equals(event.getAuthor().getId())) {
+                    channel = channel1;
+                    break outerloop;
+                }
+            }
+        }
+
+        return channel;
+    }
+
+
 }
