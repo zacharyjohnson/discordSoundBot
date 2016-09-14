@@ -22,7 +22,7 @@ public class SoundCommand implements Command {
     public void action(String[] args, MessageReceivedEvent event) {
         String sound = args[1];
 
-        switch (sound){
+        switch (sound.toLowerCase()){
             case "rick":
                 Random r = new Random();
                 int number = r.nextInt(4);
@@ -46,7 +46,7 @@ public class SoundCommand implements Command {
             case "fart":
                 voiceCommandExecution(event, "fart.mp3");
                 break;
-            case "getOff":
+            case "getoff":
                 voiceCommandExecution(event, "getOffMyBoard.mp3");
                 break;
             case "johncena":
@@ -58,8 +58,8 @@ public class SoundCommand implements Command {
             case "sad":
                 voiceCommandExecution(event, "sadViolin.mp3");
                 break;
-            case "sadv":
-                voiceCommandExecution(event, "sadViolinAirhorn");
+            case "sada":
+                voiceCommandExecution(event, "sadViolinAirhorn.mp3");
                 break;
             case "scream":
                 voiceCommandExecution(event, "wilhelmScream.mp3");
