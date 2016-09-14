@@ -1,6 +1,7 @@
 package com.company.commands;
 
 import com.company.Command;
+import com.company.Main;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 /**
@@ -17,7 +18,7 @@ public class LeaveCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
-        event.getGuild().getAudioManager().closeAudioConnection();
+        Main.leave(event);
     }
 
     @Override

@@ -13,6 +13,11 @@ public class CommandParser {
         ArrayList<String> split = new ArrayList<String>();
         String raw = rw;
         String beheaded = raw.replaceFirst("!", "");
+
+        // Determines if the command is !!, which is the invoker for the audio command
+        if (beheaded.charAt(0) == '!') {
+            beheaded = "! " + beheaded.substring(1);
+        }
         String[] splitBeheaded = beheaded.split(" ");
         for(String s : splitBeheaded) {
             split.add(s);

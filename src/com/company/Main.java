@@ -1,9 +1,9 @@
 package com.company;
 
 import com.company.commands.*;
+import javafx.scene.media.MediaPlayer;
 import net.dv8tion.jda.JDA;
 import net.dv8tion.jda.JDABuilder;
-import net.dv8tion.jda.audio.player.FilePlayer;
 import net.dv8tion.jda.audio.player.Player;
 import net.dv8tion.jda.audio.player.URLPlayer;
 import net.dv8tion.jda.entities.Guild;
@@ -29,6 +29,12 @@ public class Main {
     // Initialize the HashMap for the commands
     public static HashMap<String, Command> commands = new HashMap<String, Command>();
 
+    private static Player player;
+
+    private static AudioManager audioManager;
+
+    private int hello = 0;
+
 
     // Main method
     public static void main(String[] args) {
@@ -43,11 +49,10 @@ public class Main {
 
         commands.put("ping", new PingCommand());
         commands.put("hello", new HelloCommand());
-        commands.put("rick", new RickCommand());
         commands.put("leave", new LeaveCommand());
-        commands.put("ready", new ReadyCommand());
-        commands.put("bren", new BrenCommand());
-        commands.put("spoopy", new SpoopyCommand());
+        commands.put("nerd", new NerdCommand());
+        commands.put("!", new SoundCommand());
+        commands.put("help", new HelpCommand());
     }
 
 
@@ -60,7 +65,7 @@ public class Main {
             boolean safe = commands.get(cmd.invoke).called(cmd.args, cmd.event);
 
             if (safe) {
-                commands.get(cmd.invoke).action(cmd.args, cmd.event);
+                commands.get(cmd.invoke).action(cmd.splitBeheaded, cmd.event);
                 commands.get(cmd.invoke).executed(safe, cmd.event);
             } else {
                 commands.get(cmd.invoke).executed(safe, cmd.event);
@@ -69,6 +74,12 @@ public class Main {
     }
 
 
+    /**
+     * Detemines the voice channel of the user
+     * @param event The message event
+     * @param guild The guild of the player who sent the message
+     * @return
+     */
     public static VoiceChannel getVoiceChannel(MessageReceivedEvent event, Guild guild){
 
         VoiceChannel channel = null;
@@ -87,22 +98,36 @@ public class Main {
     }
 
 
-    public static void playFile(VoiceChannel channel, String fileName, MessageReceivedEvent event, Guild guild) {
-        AudioManager audioManager = jda.getAudioManager(guild);
-        audioManager.openAudioConnection(channel);
+    /**
+     * Returns the player of the class
+     * @return
+     */
+    public static Player getPlayer(){
+        return player;
+    }
+
+
+    /**
+     * Plays a specific file through the voice channel that the bot is in
+     * @param channel The channel for the
+     * @param fileExtensionName
+     * @param event
+     * @param guild
+     */
+    public static void playFile(VoiceChannel channel, String fileExtensionName, MessageReceivedEvent event, Guild guild) {
 
         File audioFile = null;
         URL audioUrl = null;
         try
         {
-            audioFile = new File(fileName);
-//                    audioUrl = new URL("https://www.dropbox.com/s/nk7od12chnlrruc/Spooky.mp3?dl=0");
+            //audioFile = new File(fileName);
+                    audioUrl = new URL("https://raw.githubusercontent.com/zacharyjohnson/discordSoundBot/master/src/com/company/Sounds/" + fileExtensionName);
 
-            Map<String,Player> players = new HashMap<>();
+
             //Player player = players.get(event.getGuild().getId());
 
-            Player player = new FilePlayer(audioFile);
-//                    Player player = new URLPlayer(event.getJDA(), audioUrl);
+            //Player player = new FilePlayer(audioFile);
+                    player = new URLPlayer(event.getJDA(), audioUrl);
 
             //Add the new player to the cache
 
@@ -122,6 +147,8 @@ public class Main {
             // client joins a VoiceChannel. You appear in the channel lobby immediately, but it takes a few
             // moments before you can start communicating.
             player.play();
+
+
         }
         catch (IOException e)
         {
@@ -136,15 +163,55 @@ public class Main {
         }
     }
 
+
+    /**
+     * Opens the audio connection for the bot
+     * @param channel The channel to join
+     * @param guild The guild of the player who sent the message
+     */
+    public static void openAudioConnection(VoiceChannel channel, Guild guild) {
+        audioManager = jda.getAudioManager(guild);
+        audioManager.openAudioConnection(channel);
+    }
+
+
+    /**
+     * Executes the necessary methods in order to play an audio file in a voice channel
+     * @param event The event of the command message that was sent
+     * @param fileName The extension of the file to play
+     */
     public static void voiceCommandExecution(MessageReceivedEvent event, String fileName) {
+        if (audioManager != null && audioManager.isConnected()) {
+            leave(event);
+        }
         // The guild of the player who sent the message
         Guild guild = event.getGuild();
 
         // The voice channel of the person who called the command
         VoiceChannel channel = Main.getVoiceChannel(event, guild);
 
+        // Opens the audio connection
+        openAudioConnection(channel, guild);
+
+        // Plays the file
         playFile(channel, fileName, event, guild);
+
+
+
     }
+
+
+    /**
+     * Stops the audio from playing and disconnects from the current voice channel
+     * @param event The event that the message with the command contained
+     */
+    public static void leave(MessageReceivedEvent event){
+        Main.getPlayer().stop();
+        event.getGuild().getAudioManager().closeAudioConnection();
+    }
+
+
+
 
 
 
