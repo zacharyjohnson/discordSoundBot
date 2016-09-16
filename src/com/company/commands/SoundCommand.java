@@ -106,6 +106,9 @@ public class SoundCommand implements Command {
             case "xfiles":
                 voiceCommandExecution(event, "xfiles.mp3", 0.8f);
                 break;
+            case "cancer":
+                voiceCommandExecution(event, "cancer.mp3", 0.5f);
+                break;
         }
 
 
