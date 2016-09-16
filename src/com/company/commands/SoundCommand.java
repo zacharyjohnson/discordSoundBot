@@ -64,6 +64,48 @@ public class SoundCommand implements Command {
             case "scream":
                 voiceCommandExecution(event, "wilhelmScream.mp3");
                 break;
+            case "clap":
+                voiceCommandExecution(event, "applause.mp3");
+                break;
+            case "rimshot":
+                voiceCommandExecution(event, "rimshot.mp3");
+                break;
+            case "benny":
+                voiceCommandExecution(event, "bennyhill.mp3");
+                break;
+            case "damn":
+                voiceCommandExecution(event, "damnson.mp3");
+                break;
+            case "doit":
+                voiceCommandExecution(event, "justDoIt.mp3");
+                break;
+            case "drama":
+                voiceCommandExecution(event, "dramaticChipmonk.mp3");
+                break;
+            case "mumscar":
+                voiceCommandExecution(event, "inMeMumsCar.mp3");
+                break;
+            case "ogre":
+                voiceCommandExecution(event, "itAllOgreNow.mp3");
+                break;
+            case "lile":
+                voiceCommandExecution(event, "littleEinsteins.mp3");
+                break;
+            case "ohh":
+                voiceCommandExecution(event, "ohh.mp3");
+                break;
+            case "pschyo":
+                voiceCommandExecution(event, "psycho.mp3");
+                break;
+            case "shia":
+                voiceCommandExecution(event, "shia.mp3");
+                break;
+            case "shotsfired":
+                voiceCommandExecution(event, "shotsFired.mp3");
+                break;
+            case "xfiles":
+                voiceCommandExecution(event, "xfiles.mp3");
+                break;
         }
 
 
