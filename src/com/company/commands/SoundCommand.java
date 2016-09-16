@@ -83,7 +83,7 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "dramaticChipmonk.mp3");
                 break;
             case "mumscar":
-                voiceCommandExecution(event, "mumscar.mp2");
+                voiceCommandExecution(event, "willThisFrigginWork.mp3");
                 break;
             case "ogre":
                 voiceCommandExecution(event, "itAllOgreNow.mp3");
