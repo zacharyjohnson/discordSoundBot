@@ -114,7 +114,7 @@ public class Main {
      * @param event
      * @param guild
      */
-    public static void playFile(VoiceChannel channel, String fileExtensionName, MessageReceivedEvent event, Guild guild) {
+    public static void playFile(VoiceChannel channel, String fileExtensionName, MessageReceivedEvent event, Guild guild, float volume) {
 
         File audioFile = null;
         URL audioUrl = null;
@@ -146,6 +146,7 @@ public class Main {
             //NOTE: "completely connected" is not just joining the VoiceChannel. Think about when your Discord
             // client joins a VoiceChannel. You appear in the channel lobby immediately, but it takes a few
             // moments before you can start communicating.
+            player.setVolume(volume);
             player.play();
 
 
@@ -172,6 +173,7 @@ public class Main {
     public static void openAudioConnection(VoiceChannel channel, Guild guild) {
         audioManager = jda.getAudioManager(guild);
         audioManager.openAudioConnection(channel);
+
     }
 
 
@@ -180,7 +182,7 @@ public class Main {
      * @param event The event of the command message that was sent
      * @param fileName The extension of the file to play
      */
-    public static void voiceCommandExecution(MessageReceivedEvent event, String fileName) {
+    public static void voiceCommandExecution(MessageReceivedEvent event, String fileName, float volume) {
         if (audioManager != null && audioManager.isConnected()) {
             leave(event);
         }
@@ -194,7 +196,7 @@ public class Main {
         openAudioConnection(channel, guild);
 
         // Plays the file
-        playFile(channel, fileName, event, guild);
+        playFile(channel, fileName, event, guild, volume);
 
 
 

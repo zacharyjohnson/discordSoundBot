@@ -28,83 +28,83 @@ public class SoundCommand implements Command {
                 int number = r.nextInt(4);
                 System.out.println(number);
                 if (number != 3){
-                    voiceCommandExecution(event, "rickHarrison.mp3");
+                    voiceCommandExecution(event, "rickHarrison.mp3", 0.4f);
                 } else {
-                    voiceCommandExecution(event, "rickRoll.mp3");
+                    voiceCommandExecution(event, "rickRoll.mp3", 0.5f);
                 }
                 break;
             case "spoopy":
-                voiceCommandExecution(event, "Spooky.mp3");
+                voiceCommandExecution(event, "Spooky.mp3", 0.2f);
                 event.getTextChannel().sendMessage("http://i.makeagif.com/media/10-09-2015/KH29IN.gif");
                 break;
             case "airhorn":
-                voiceCommandExecution(event, "airHorn.mp3");
+                voiceCommandExecution(event, "airHorn.mp3", 1f);
                 break;
             case "allwin":
-                voiceCommandExecution(event, "allIDoIsWin.mp3");
+                voiceCommandExecution(event, "allIDoIsWin.mp3", 0.75f);
                 break;
             case "fart":
-                voiceCommandExecution(event, "fart.mp3");
+                voiceCommandExecution(event, "fart.mp3", 1f);
                 break;
             case "getoff":
-                voiceCommandExecution(event, "getOffMyBoard.mp3");
+                voiceCommandExecution(event, "getOffMyBoard.mp3", 0.1f);
                 break;
             case "johncena":
-                voiceCommandExecution(event, "johnCena.mp3");
+                voiceCommandExecution(event, "johnCena.mp3", 0.4f);
                 break;
             case "ready":
-                voiceCommandExecution(event, "Ready.mp3");
+                voiceCommandExecution(event, "Ready.mp3", 1f);
                 break;
             case "sad":
-                voiceCommandExecution(event, "sadViolin.mp3");
+                voiceCommandExecution(event, "sadViolin.mp3", 0.7f);
                 break;
             case "sada":
-                voiceCommandExecution(event, "sadViolinAirhorn.mp3");
+                voiceCommandExecution(event, "sadViolinAirhorn.mp3", 0.4f);
                 break;
             case "scream":
-                voiceCommandExecution(event, "wilhelmScream.mp3");
+                voiceCommandExecution(event, "wilhelmScream.mp3", 1f);
                 break;
             case "clap":
-                voiceCommandExecution(event, "applause.mp3");
+                voiceCommandExecution(event, "applause.mp3", 0.7f);
                 break;
             case "rimshot":
-                voiceCommandExecution(event, "rimshot.mp3");
+                voiceCommandExecution(event, "rimshot.mp3", 1f);
                 break;
             case "benny":
-                voiceCommandExecution(event, "bennyhill.mp3");
+                voiceCommandExecution(event, "bennyhill.mp3", 0.8f);
                 break;
             case "damn":
-                voiceCommandExecution(event, "damnson.mp3");
+                voiceCommandExecution(event, "damnson.mp3", 0.7f);
                 break;
             case "doit":
-                voiceCommandExecution(event, "justDoIt.mp3");
+                voiceCommandExecution(event, "justDoIt.mp3", 0.4f);
                 break;
             case "drama":
-                voiceCommandExecution(event, "dramaKill.mp3");
+                voiceCommandExecution(event, "dramaKill.mp3", 0.5f);
                 break;
             case "mumscar":
-                voiceCommandExecution(event, "willThisFrigginWork.mp3");
+                voiceCommandExecution(event, "willThisFrigginWork.mp3", 0.9f);
                 break;
             case "ogre":
-                voiceCommandExecution(event, "itAllOgreNow.mp3");
+                voiceCommandExecution(event, "itAllOgreNow.mp3", 0.3f);
                 break;
             case "lile":
-                voiceCommandExecution(event, "littleEinsteins.mp3");
+                voiceCommandExecution(event, "littleEinsteins.mp3", 0.5f);
                 break;
             case "ohh":
-                voiceCommandExecution(event, "ohh.mp3");
+                voiceCommandExecution(event, "ohh.mp3", 0.3f);
                 break;
             case "psycho":
-                voiceCommandExecution(event, "psycho.mp3");
+                voiceCommandExecution(event, "psycho.mp3", 0.2f);
                 break;
             case "shia":
-                voiceCommandExecution(event, "newShia.mp3");
+                voiceCommandExecution(event, "newShia.mp3", 0.7f);
                 break;
             case "shotsfired":
-                voiceCommandExecution(event, "shotsFired.mp3");
+                voiceCommandExecution(event, "shotsFired.mp3", 0.7f);
                 break;
             case "xfiles":
-                voiceCommandExecution(event, "xfiles.mp3");
+                voiceCommandExecution(event, "xfiles.mp3", 0.8f);
                 break;
         }
 
