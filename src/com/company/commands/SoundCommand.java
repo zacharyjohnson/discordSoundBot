@@ -53,7 +53,7 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "johnCena.mp3");
                 break;
             case "ready":
-                voiceCommandExecution(event, "ready.mp3");
+                voiceCommandExecution(event, "Ready.mp3");
                 break;
             case "sad":
                 voiceCommandExecution(event, "sadViolin.mp3");
@@ -71,7 +71,7 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "rimshot.mp3");
                 break;
             case "benny":
-                voiceCommandExecution(event, "bennyhill.mp3");
+                voiceCommandExecution(event, "bennyhill1.mp3");
                 break;
             case "damn":
                 voiceCommandExecution(event, "damnson.mp3");
@@ -80,10 +80,10 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "justDoIt.mp3");
                 break;
             case "drama":
-                voiceCommandExecution(event, "dramaticChipmonk.mp3");
+                voiceCommandExecution(event, "dramaChip.mp3");
                 break;
             case "mumscar":
-                voiceCommandExecution(event, "inMeMumsCar.mp3");
+                voiceCommandExecution(event, "mumscar.mp3");
                 break;
             case "ogre":
                 voiceCommandExecution(event, "itAllOgreNow.mp3");
@@ -98,7 +98,7 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "psycho.mp3");
                 break;
             case "shia":
-                voiceCommandExecution(event, "shia.mp3");
+                voiceCommandExecution(event, "shiaSurprise.mp3");
                 break;
             case "shotsfired":
                 voiceCommandExecution(event, "shotsFired.mp3");
