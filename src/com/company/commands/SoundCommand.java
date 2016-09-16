@@ -94,7 +94,7 @@ public class SoundCommand implements Command {
             case "ohh":
                 voiceCommandExecution(event, "ohh.mp3");
                 break;
-            case "pschyo":
+            case "psycho":
                 voiceCommandExecution(event, "psycho.mp3");
                 break;
             case "shia":
