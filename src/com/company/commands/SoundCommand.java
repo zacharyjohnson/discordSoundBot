@@ -25,12 +25,14 @@ public class SoundCommand implements Command {
         switch (sound.toLowerCase()){
             case "rick":
                 Random r = new Random();
-                int number = r.nextInt(4);
+                int number = r.nextInt(5);
                 System.out.println(number);
-                if (number != 3){
-                    voiceCommandExecution(event, "rickHarrison.mp3", 0.4f);
+                if (number == 3){
+                    voiceCommandExecution(event, "rickRoll.mp3", 0.4f);
+                } else if(number == 4){
+                    voiceCommandExecution(event, "neverHitNotes.mp3", 0.5f);
                 } else {
-                    voiceCommandExecution(event, "rickRoll.mp3", 0.5f);
+                    voiceCommandExecution(event, "rickHarrison.mp3", 0.4f);
                 }
                 break;
             case "spoopy":
@@ -109,6 +111,8 @@ public class SoundCommand implements Command {
             case "cancer":
                 voiceCommandExecution(event, "cancer.mp3", 0.5f);
                 break;
+            case "never":
+                voiceCommandExecution(event, "neverHitNotes", 0.5f);
         }
 
 

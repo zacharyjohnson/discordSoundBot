@@ -18,7 +18,7 @@ public class NerdCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
-        File file = new File("/Users/Zach/Documents/discordSoundBot/src/com/company/Images/nerd_80_anim_gif-1.gif");
+        File file = new File("/Users/Zach/Documents/discordSoundBot/discordSoundBot/src/com/company/Images/nerd_80_anim_gif-1.gif");
 
         event.getTextChannel().sendFile(file, null);
     }

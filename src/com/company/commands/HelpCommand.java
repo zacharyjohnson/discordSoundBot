@@ -15,9 +15,7 @@ public class HelpCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
-        event.getTextChannel().sendMessage("!help  - Lists all available commands" +
-                    "\n!ping - replies with PONG" +
-                    "\nSounds:");
+        event.getPrivateChannel().sendMessage("hi");
     }
 
     @Override
