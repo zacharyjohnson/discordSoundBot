@@ -52,7 +52,7 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "getOffMyBoard.mp3", 0.1f);
                 break;
             case "johncena":
-                voiceCommandExecution(event, "johnCena.mp3", 0.4f);
+                voiceCommandExecution(event, "johnCena.mp3", 0.2f);
                 break;
             case "ready":
                 voiceCommandExecution(event, "Ready.mp3", 1f);
@@ -100,7 +100,7 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "psycho.mp3", 0.2f);
                 break;
             case "shia":
-                voiceCommandExecution(event, "newShia.mp3", 0.7f);
+                voiceCommandExecution(event, "newShia.mp3", 0.5f);
                 break;
             case "shotsfired":
                 voiceCommandExecution(event, "shotsFired.mp3", 0.7f);
@@ -113,6 +113,76 @@ public class SoundCommand implements Command {
                 break;
             case "never":
                 voiceCommandExecution(event, "neverHitNotes", 0.5f);
+                break;
+            case "notime":
+                voiceCommandExecution(event, "aintNobodyGotTimeForThat.mp3", 0.5f);
+                break;
+            case "boo":
+                voiceCommandExecution(event, "booingCrowd.mp3", 0.7f);
+                break;
+            case "bell":
+                voiceCommandExecution(event, "boxingBell.mp3", 0.7f);
+                break;
+            case "challengea":
+                voiceCommandExecution(event, "challengeAccepted.mp3", 0.7f);
+                break;
+            case "crickets":
+                voiceCommandExecution(event, "crickets.mp3", 0.7f);
+                break;
+            case "cheer":
+                voiceCommandExecution(event, "cheeringCrowd.mp3", 0.8f);
+                break;
+            case "bumbum":
+                voiceCommandExecution(event, "dramaticChipmunk.mp3", 1f);
+                break;
+            case "drumroll":
+                voiceCommandExecution(event, "drumRoll.mp3", 0.7f);
+                break;
+            case "dundun":
+                voiceCommandExecution(event, "dunDun.mp3", 0.7f);
+                break;
+            case "letitgo":
+                voiceCommandExecution(event, "letItGo.mp3", 0.6f);
+                break;
+            case "sax":
+                voiceCommandExecution(event, "carelessWhisper.mp3", 0.6f);
+                break;
+            case "harlemshake":
+                voiceCommandExecution(event, "harlemShake.mp3", 0.5f);
+                break;
+            case "yea":
+                voiceCommandExecution(event, "HEYYEYAAEYAAAEYAEYAA.mp3", 0.5f);
+                break;
+            case "no":
+                voiceCommandExecution(event, "howAboutNo.mp3", 0.7f);
+                break;
+            case "smell":
+                voiceCommandExecution(event, "iCanSmellYou.mp3", 0.7f);
+                break;
+            case "killyou":
+                voiceCommandExecution(event, "iWillKillYou.mp3", 0.9f);
+                break;
+            case "yee":
+                voiceCommandExecution(event, "yee.mp3", 0.7f);
+                break;
+            case "taps":
+                voiceCommandExecution(event, "taps.mp3", 0.8f);
+                break;
+            case "nogod":
+                voiceCommandExecution(event, "noGodNo.mp3", 0.8f);
+                break;
+            case "pokemon":
+                voiceCommandExecution(event, "iPlayPokemonGo.mp3", 0.5f);
+                break;
+            case "dumbass":
+                voiceCommandExecution(event, "redFormanDumbass.mp3", 0.6f);
+                break;
+            case "aintmusic":
+                voiceCommandExecution(event, "aintGotTimeRemix.mp3", 0.6f);
+                break;
+            case "gummybear":
+                voiceCommandExecution(event, "gummBearSong.mp3", 0.6f);
+                break;
         }
 
 
