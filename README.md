@@ -7,7 +7,7 @@ A soundboard for Discord servers written in Java.
 !nerd - Sends a .gif
 
 # Sound Commands
-### To use these commands, you must be in a VoiceChannel, as the bot will join your channel to play the specified sound. All commands that play sounds start with '!!'
+##### To use these commands, you must be in a VoiceChannel, as the bot will join your channel to play the specified sound. All commands that play sounds start with '!!'
 - !leave - Forces the bot to stop playing and leave the voice channel
 - !!rick
 - !!spoopy
