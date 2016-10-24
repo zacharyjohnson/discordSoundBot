@@ -112,7 +112,7 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "cancer.mp3", 0.5f);
                 break;
             case "never":
-                voiceCommandExecution(event, "neverHitNotes", 0.5f);
+                voiceCommandExecution(event, "neverHitNotes.mp3", 0.5f);
                 break;
             case "notime":
                 voiceCommandExecution(event, "aintNobodyGotTimeForThat.mp3", 0.5f);
@@ -175,7 +175,7 @@ public class SoundCommand implements Command {
                 voiceCommandExecution(event, "iPlayPokemonGo.mp3", 0.5f);
                 break;
             case "dumbass":
-                voiceCommandExecution(event, "redFormanDumbass.mp3", 0.6f);
+                voiceCommandExecution(event, "redFormanDumbass.mp3", 0.8f);
                 break;
             case "aintmusic":
                 voiceCommandExecution(event, "aintGotTimeRemix.mp3", 0.6f);

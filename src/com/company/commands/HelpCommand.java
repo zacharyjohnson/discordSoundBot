@@ -15,7 +15,7 @@ public class HelpCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
-        event.getPrivateChannel().sendMessage("hi");
+        event.getTextChannel().sendMessage("https://github.com/zacharyjohnson/discordSoundBot/blob/master/README.md");
     }
 
     @Override
