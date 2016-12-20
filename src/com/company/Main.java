@@ -196,7 +196,7 @@ public class Main {
         openAudioConnection(channel, guild);
 
         // Plays the file
-        playFile(channel, fileName, event, guild, volume);
+        playFile(channel, fileName, event, guild, (float) (volume * 0.8));
 
 
 
