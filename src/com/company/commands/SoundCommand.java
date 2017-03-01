@@ -183,6 +183,8 @@ public class SoundCommand implements Command {
             case "gummybear":
                 voiceCommandExecution(event, "gummBearSong.mp3", 0.6f);
                 break;
+            case "regional":
+                voiceCommandExecution(event, "regionalAtBest.mp3", 0.6f);
         }
 
 
