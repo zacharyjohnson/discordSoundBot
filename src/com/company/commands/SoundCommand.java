@@ -185,6 +185,10 @@ public class SoundCommand implements Command {
                 break;
             case "regional":
                 voiceCommandExecution(event, "regionalAtBest.mp3", 0.6f);
+                break;
+            case "disgusting":
+                voiceCommandExecution(event, "digusting.mp3", 0.7f);
+                break;
         }
 
 
