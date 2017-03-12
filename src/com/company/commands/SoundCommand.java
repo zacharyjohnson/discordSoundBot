@@ -195,6 +195,9 @@ public class SoundCommand implements Command {
             case "mii":
                 voiceCommandExecution(event, "mii.mp3", 0.7f);
                 break;
+            case "office":
+                voiceCommandExecution(event, "office.mp3", 0.7f);
+                break;
         }
 
 
