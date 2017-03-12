@@ -189,6 +189,12 @@ public class SoundCommand implements Command {
             case "disgusting":
                 voiceCommandExecution(event, "digusting.mp3", 0.7f);
                 break;
+            case "wiishop":
+                voiceCommandExecution(event, "wiiShop.mp3", 0.7f);
+                break;
+            case "mii":
+                voiceCommandExecution(event, "mii.mp3", 0.7f);
+                break;
         }
 
 
