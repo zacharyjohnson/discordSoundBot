@@ -198,6 +198,9 @@ public class SoundCommand implements Command {
             case "office":
                 voiceCommandExecution(event, "office.mp3", 0.7f);
                 break;
+            case "duck":
+                voiceCommandExecution(event, "duckSong.mp3", 0.7f);
+                break;
         }
 
 
