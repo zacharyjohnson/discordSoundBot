@@ -201,6 +201,12 @@ public class SoundCommand implements Command {
             case "duck":
                 voiceCommandExecution(event, "duckSong.mp3", 0.7f);
                 break;
+            case "smokeandmirrors":
+                voiceCommandExecution(event, "smokeAndMirrors.mp3", 0.7f);
+                break;
+            case "blurryface":
+                voiceCommandExecution(event, "blurryface.mp3", 0.7f);
+                break;
         }
 
 
